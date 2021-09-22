@@ -3,5 +3,6 @@
 
 #include <iostream>
 #include <fstream>
+#include "lib/probability.h"
 
 #endif // MAIN_H

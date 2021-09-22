@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 project(cpp-utils)
 
-# GoogleTest requires at least C++11
 set(CMAKE_CXX_STANDARD 20)
 
 include(FetchContent)
@@ -14,4 +13,14 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-add_executable(Main main.cpp probability.cpp)
+add_subdirectory(lib)
+
+add_executable(Main main.cpp)
+
+target_link_libraries(Main PUBLIC Probability)
+
+# add the binary tree to the search path for include files
+target_include_directories(Main PUBLIC
+                          "${PROJECT_BINARY_DIR}"
+                          "${PROJECT_SOURCE_DIR}/lib"
+                          )

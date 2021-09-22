@@ -1,5 +1,4 @@
 #include "main.h"
-#include "probability.h"
 
 int main()
 {
