@@ -1,7 +1,7 @@
 
 #include "probability.h"
 
-double Variance(std::vector<double> &values)
+double Probability::Variance(std::vector<double> &values)
 {
     double sum = std::accumulate(values.begin(), values.end(), 0);
     double mean = sum / values.size();
@@ -19,7 +19,7 @@ double Variance(std::vector<double> &values)
     return sumOfSquares / N;
 }
 
-double StandardDeviation(std::vector<double> &values)
+double Probability::StandardDeviation(std::vector<double> &values)
 {
     double variance = Variance(values);
     return std::sqrt(variance);
