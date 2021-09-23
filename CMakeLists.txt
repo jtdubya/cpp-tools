@@ -3,21 +3,11 @@ project(Toolbox)
 
 set(CMAKE_CXX_STANDARD 20)
 
-include(FetchContent)
-FetchContent_Declare(
-  googletest
-  URL https://github.com/google/googletest/archive/e2239ee6043f73722e7aa812a459f54a28552929.zip
-)
-
-# For Windows: Prevent overriding the parent project's compiler/linker settings
-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-FetchContent_MakeAvailable(googletest)
-
 add_subdirectory(lib)
+add_subdirectory(lib-test)
 
 add_executable(Toolbox main.cpp)
-
-target_link_libraries(Toolbox PUBLIC Probability)
+target_link_libraries(Toolbox Probability)
 
 # add the binary tree to the search path for include files
 target_include_directories(Toolbox PUBLIC
