@@ -27,7 +27,7 @@ URL https://github.com/google/googletest/archive/e2239ee6043f73722e7aa812a459f54
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-add_executable(ProbabilityTests lib-test/probability-test.cpp)
+add_executable(ProbabilityTests lib-test/probability-tests.cpp)
 target_link_libraries(ProbabilityTests gtest_main Probability)
 
 target_include_directories(ProbabilityTests PUBLIC
