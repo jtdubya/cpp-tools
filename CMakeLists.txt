@@ -15,6 +15,10 @@ target_include_directories(Main PUBLIC
                           "${PROJECT_SOURCE_DIR}/lib"
                           )
 
+# Copy input files
+file(GLOB INPUT_FILES "input/*.txt")
+file(COPY ${INPUT_FILES} DESTINATION "input")
+
 # Build tests
 enable_testing()
 
