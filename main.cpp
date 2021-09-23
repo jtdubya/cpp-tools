@@ -2,50 +2,46 @@
 
 int main()
 {
-    std::ifstream inputFile("input/Graph1.txt");
+    std::ifstream inputFile("input/Graph2.txt");
 
     std::string inputString;
 
     int inputCount = 0;
-    std::string var1;
-    std::string var2;
-    inputFile >> var1;
-    inputFile >> var2;
 
-    std::cout << "var1: " << var1 << std::endl;
-    std::cout << "var2: " << var2 << std::endl;
+    // skip the first 2 files
+    std::string column1;
+    std::string column2;
+    inputFile >> column1;
+    inputFile >> column2;
 
-    // std::vector<double> values;
-    std::vector<double> values = {10, 12, 23, 23, 16, 23, 21, 16};
+    std::cout << "column1: " << column1 << std::endl;
+    std::cout << "column2: " << column2 << std::endl;
 
-    // while(inputFile >> inputString)
-    // {
-    //     std::string valueString;
+    std::vector<double> values;
 
-    //  //   std::cout << "inputString: " << inputString << std::endl;
+    while(inputFile >> inputString)
+    {
+        std::string valueString;
 
-    //     bool delimFound = false;
+        bool delimFound = false;
 
-    //     for (char letter : inputString)
-    //     {
-    //         if (delimFound)
-    //         {
-    //             valueString += letter;
-    //         }
-    //         else if (letter == ',')
-    //         {
-    //             delimFound = true;
-    //         }
-    //     }
+        for (char letter : inputString)
+        {
+            if (delimFound)
+            {
+                valueString += letter;
+            }
+            else if (letter == ',')
+            {
+                delimFound = true;
+            }
+        }
 
-    //  //   std::cout << "valueString: " << valueString << std::endl;
-
-    //     double value = std::stod(valueString);
-    //     values.push_back(value);
-    // //    std::cout << "value: " << value << std::endl;
-    // }
+        double value = std::stod(valueString);
+        values.push_back(value);
+    }
 
     double standardDeviation = Probability::StandardDeviation(values);
-    std::cout << "standardDeviation: " << standardDeviation << std::endl;
+    std::cout << "Standard Deviation: " << standardDeviation << std::endl;
 }
 
