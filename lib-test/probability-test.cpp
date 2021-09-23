@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../lib/probability.h"
+#include "probability.h"
 
 std::vector<double> inputValues = { 46, 69,	32,	60,	52,	41 };
 
