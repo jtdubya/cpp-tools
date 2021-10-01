@@ -7,5 +7,5 @@ Tools used for testing and development that includes gtest unit tests.
     1. `mkdir build && cd build`
     1. `cmake ../.`
     1. `cmake --build . && ctest -V` 
-        * *Tip: specify jobs to speed up build. Example for a cpu with 16 threads : `cmake --build . -j 16 && ctest -V` 
+        * *Tip: specify jobs to speed up build. Example for a cpu with 16 threads :* `cmake --build . -j 16 && ctest -V` 
 1. Run: `./Main`
