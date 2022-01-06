@@ -1,5 +1,5 @@
 # C++ Tools
-Tools used for testing and development that includes gtest unit tests.
+A minimal cmake project with a library and corresponding gtest unit tests. 
 
 # Usage
 1. Modify [main.cpp](main.cpp) as needed to do whatever you need to do (like read data from a file and run it through the probability functions)
